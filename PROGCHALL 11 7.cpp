@@ -1,7 +1,6 @@
 #include <iostream>
-#include <string>
-#include <stdlib.h>
 #include <cstring>
+#include <stdlib.h>
 using namespace std;
 
 const int  words = 99999;
@@ -55,7 +54,6 @@ int main (){
 		
 		cout << "Account Balance : $";
 		cin >> arr[i].accountBalance;
-		
 		while (arr[i].accountBalance < 0){
 			cout << "Please input the right number : ";
 			cin >> arr[i].accountBalance;
@@ -64,32 +62,18 @@ int main (){
 		cout << "Last Payment    : ";
 		cin >> arr[i].lastPayment;
 		cout << endl;
-		cin.ignore();
 	}
 	
-	string Name;
-	cout << "Which data do you want to display? Enter a name :  " << endl;
-	getline (cin, Name);
-	bool found = false;
+	cout << "-DATA DISPLAY- " << endl;
+	//Display ulang//
 	for (int i = 0 ; i < userInput ; i++){
-		if (Name.compare (arr[i].name) == 0){
-			cout << "Name	        : " << arr[i].name << endl;
-			cout << "Address         : " << arr[i].address << endl;
-			cout << "City 	        : " << arr[i].city << endl;
-			cout << "Phone Number    : " << arr[i].cellNumber << endl;
-			cout << "Account Balance : $" << arr[i].accountBalance << endl;
-			cout << "Last Payment    : "<< arr[i].lastPayment <<endl;
-			found = true;
-		}
+		cout << "Name            : " << arr[i].name << endl;
+		cout << "Address         : "<< arr[i].address<< endl;
+		cout << "City            : " << arr[i].city << endl;
+		cout << "Phone Number    : " << arr[i].cellNumber << endl;
+		cout << "Account Balance : " << arr[i].accountBalance << endl;
+		cout << "LastPayment     : " << arr[i].lastPayment << endl;
+		cout << endl;
 	}
-	if(found) {
-		
-	}
-	else {
-		cout << "eror.";
-	}
-		return 0;
-	}
-
-
-
+	return 0;
+}
