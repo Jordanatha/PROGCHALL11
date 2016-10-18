@@ -1,10 +1,12 @@
 #include <iostream>
 using namespace std;
 
+const int words = 9999;
+
 struct data{
-	string name;
-	string address;
-	string city;
+	char name[words];
+	char address[words];
+	char city[words];
 	int cellNumber;
 	float accountBalance;
 	string lastPayment;
@@ -17,15 +19,17 @@ int main (){
 	
 	data arr[userInput];
 	
+	char dummy;
 	for (int i = 0 ; i < userInput ; i++){
+	
 		cout << "Name : ";
-		cin >> arr[i].name;
-		
+		dummy = getchar();
+		cin.getline (arr[i].name, words);	
 		cout << "Address : ";
-		cin >> arr[i].address;
+		cin.getline (arr[i].address, words);
 		
 		cout << "City : ";
-		cin >> arr[i].city;
+		cin.getline (arr[i].city, words);
 		
 		cout << "Phone Number : ";
 		cin >> arr[i].cellNumber;
@@ -43,6 +47,17 @@ int main (){
 		
 		cout << "Last Payment : ";
 		cin >> arr[i].lastPayment;
+		cout << endl;
+	}
+	
+	//Display ulang//
+	for (int i = 0 ; i < userInput ; i++){
+		cout << "Name : " << arr[i].name << endl;
+		cout << "Address : "<< arr[i].address<< endl;
+		cout << "City : " << arr[i].city << endl;
+		cout << "Phone Number : " << arr[i].cellNumber << endl;
+		cout << "Account Balance : " << arr[i].accountBalance << endl;
+		cout << "LastPayment : " << arr[i].lastPayment << endl;
 		cout << endl;
 	}
 	return 0;
